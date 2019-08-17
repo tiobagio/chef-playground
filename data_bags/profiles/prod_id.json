@@ -1,0 +1,10 @@
+{
+    "id": "prod_id",
+    "phase": "production",
+    "country": "id",
+    "sec_os_rhel_7": "1.0.0",
+    "sec_os_rhel_6": "1.0.0",
+    "sec_os_solaris_10": "1.0.0",
+    "sec_os_solaris_11": "1.0.0",
+    "sec_os_aix_7": "1.0.0"
+}

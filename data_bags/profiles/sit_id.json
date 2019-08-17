@@ -1,0 +1,10 @@
+{
+    "id": "sit_id",
+    "country": "id",
+    "phase": "sit",
+    "sec_os_rhel_7": "1.0.2",
+    "sec_os_rhel_6": "1.0.1",
+    "sec_os_solaris_10": "1.0.0",
+    "sec_os_solaris_11": "1.0.3",
+    "sec_os_aix_7": "1.0.0"
+}

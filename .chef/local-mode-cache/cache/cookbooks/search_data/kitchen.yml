@@ -1,0 +1,34 @@
+---
+driver:
+  name: vagrant
+
+provisioner:
+  name: chef_zero
+  # You may wish to disable always updating cookbooks in CI or other testing environments.
+  # For example:
+  #   always_update_cookbooks: <%= !ENV['CI'] %>
+  always_update_cookbooks: true
+  nodes_path: ../../nodes
+  data_bags_path: ../../data_bags
+  roles_path: ../../roles
+  enviornments_path: ../../environments
+  client_rb:
+      chef_license: accept
+
+verifier:
+  name: inspec
+
+platforms:
+  - name: centos65
+    driver:
+        box: learningchef/centos65
+        box_url: learningchef/centos65
+
+suites:
+  - name: default
+    run_list:
+      - recipe[search_data::default]
+    verifier:
+      inspec_tests:
+        - test/integration/default
+    attributes:
