@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # run chef-zero
-#chef-zero --port 9501 &
+#/opt/chefdk/embedded/bin/chef-zero --port 9501 &
 
 # create nodes
 knife upload nodes
@@ -12,7 +12,16 @@ knife data_bag create users
 knife data_bag from file users alice.json
 knife data_bag from file users bob.json
 
+knife data_bag create profiles
+knife data_bag from file profiles dev_id.json
+knife data_bag from file profiles sit_id.json
+knife data_bag from file profiles uat_id.json
+knife data_bag from file profiles prod_id.json
+
 knife data_bag show users
+
+knife data_bag show profiles
+knife data_bag show profiles sit_id
 
 # create roles
 knife role from file webserver.json

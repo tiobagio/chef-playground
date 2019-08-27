@@ -1,0 +1,7 @@
+{
+"run_list": [
+  "role[bar]",
+  "recipe[hello]",
+  "role[foo]"
+]
+}

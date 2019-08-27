@@ -1,20 +1,42 @@
+[2019-08-18T22:20:57+08:00] INFO: Started chef-zero at chefzero://localhost:1 with repository at /Users/tio/mydemo/chef-playground
+  One version per cookbook
+
+[2019-08-18T22:20:57+08:00] DEBUG: Running Ohai with the following configuration: {:logger=>Chef::Log}
+Starting Chef Client, version 14.6.47[0m
+[2019-08-18T22:20:57+08:00] INFO: *** Chef 14.6.47 ***
+[2019-08-18T22:20:57+08:00] INFO: Platform: x86_64-darwin15
+[2019-08-18T22:20:57+08:00] INFO: Chef-client pid: 97468
+[2019-08-18T22:20:57+08:00] DEBUG: Chef-client request_id: 9a5c3035-86ef-4dc2-ae0c-1c32cf73308b
+[2019-08-18T22:20:57+08:00] DEBUG: Running Ohai with the following configuration: {:logger=>Chef::Log}
+[2019-08-18T22:20:57+08:00] INFO: The plugin path /etc/chef/ohai/plugins does not exist. Skipping...
+[2019-08-18T22:21:02+08:00] DEBUG: GET /organizations/chef/nodes/devhost
+[2019-08-18T22:21:02+08:00] DEBUG: #<ChefZero::RestRequest:0x00007ff912905ac0
+ @env=
+  {"SCRIPT_NAME"=>"",
+   "SERVER_NAME"=>"localhost",
+   "REQUEST_METHOD"=>"GET",
+   "PATH_INFO"=>"/nodes/devhost",
+   "QUERY_STRING"=>nil,
+   "SERVER_PORT"=>1,
+   "HTTP_HOST"=>"localhost:1",
+   "HTTP_X_OPS_SERVER_API_VERSION"=>"1",
+   "rack.url_scheme"=>"chefzero",
+   "rack.input"=>#<StringIO:0x00007ff912940918>},
+ @rest_base_prefix=["organizations", "chef"],
+ @rest_path=["organizations", "chef", "nodes", "devhost"]>
+
+[2019-08-18T22:21:02+08:00] DEBUG: 
+--- RESPONSE (200) ---
 {
   "name": "devhost",
-  "override": {
-    "message": "foo role message override_attributes"
-  },
   "normal": {
     "tags": [
 
-    ],
-    "message": "attribute from attribute file"
-  },
-  "default": {
-    "message": "foo role message default_attributes"
+    ]
   },
   "automatic": {
-    "uptime_seconds": 1696170,
-    "uptime": "19 days 15 hours 09 minutes 30 seconds",
+    "uptime_seconds": 1056524,
+    "uptime": "12 days 05 hours 28 minutes 44 seconds",
     "chef_packages": {
       "chef": {
         "version": "14.6.47",
@@ -220,8 +242,12 @@
           "arp": {
             "192.168.1.1": "f8:32:e4:ec:5c:30",
             "192.168.1.8": "38:b1:db:2d:fb:5c",
+            "192.168.1.29": "6c:72:e7:52:fb:1c",
+            "192.168.1.55": "70:14:a6:7f:aa:54",
+            "192.168.1.100": "d0:4f:7e:5e:4c:8c",
             "192.168.1.142": "f8:95:ea:78:b2:35",
             "192.168.1.191": "d8:31:34:68:d5:19",
+            "192.168.1.196": "e0:ac:cb:9d:94:84",
             "192.168.1.255": "ff:ff:ff:ff:ff:ff",
             "224.0.0.251": "1:0:5e:0:0:fb",
             "239.255.255.250": "1:0:5e:7f:ff:fa"
@@ -247,10 +273,10 @@
         },
         "awdl0": {
           "addresses": {
-            "a6:94:d3:7f:b3:cc": {
+            "de:0a:45:7f:bb:bb": {
               "family": "lladdr"
             },
-            "fe80::a494:d3ff:fe7f:b3cc": {
+            "fe80::dc0a:45ff:fe7f:bbbb": {
               "family": "inet6",
               "prefixlen": "64",
               "scope": "Link"
@@ -444,6 +470,30 @@
           "number": "3",
           "encapsulation": "Unknown"
         },
+        "en5": {
+          "addresses": {
+            "ac:de:48:00:11:22": {
+              "family": "lladdr"
+            },
+            "fe80::aede:48ff:fe00:1122": {
+              "family": "inet6",
+              "prefixlen": "64",
+              "scope": "Link"
+            }
+          },
+          "mtu": "1500",
+          "flags": [
+            "UP",
+            "BROADCAST",
+            "SMART",
+            "RUNNING",
+            "SIMPLEX",
+            "MULTICAST"
+          ],
+          "type": "en",
+          "number": "5",
+          "encapsulation": "Ethernet"
+        },
         "vboxnet0": {
           "addresses": {
             "0a:00:27:00:00:00": {
@@ -477,7 +527,6 @@
             "UP",
             "BROADCAST",
             "RUNNING",
-            "PROMISC",
             "SIMPLEX",
             "MULTICAST"
           ],
@@ -503,30 +552,6 @@
           ],
           "type": "vboxnet",
           "number": "2",
-          "encapsulation": "Ethernet"
-        },
-        "en5": {
-          "addresses": {
-            "ac:de:48:00:11:22": {
-              "family": "lladdr"
-            },
-            "fe80::aede:48ff:fe00:1122": {
-              "family": "inet6",
-              "prefixlen": "64",
-              "scope": "Link"
-            }
-          },
-          "mtu": "1500",
-          "flags": [
-            "UP",
-            "BROADCAST",
-            "SMART",
-            "RUNNING",
-            "SIMPLEX",
-            "MULTICAST"
-          ],
-          "type": "en",
-          "number": "5",
           "encapsulation": "Ethernet"
         }
       },
@@ -584,7 +609,7 @@
         "net.inet.ip.rx_chainsz": "6",
         "net.inet.ip.linklocal.in.allowbadttl": "1",
         "net.inet.ip.random_id": "1",
-        "net.inet.ip.maxchainsent": "85",
+        "net.inet.ip.maxchainsent": "49",
         "net.inet.ip.select_srcif_debug": "0",
         "net.inet.ip.output_perf": "0",
         "net.inet.ip.output_perf_bins": "0",
@@ -622,7 +647,7 @@
         "net.inet.tcp.tcp_lq_overflow": "1",
         "net.inet.tcp.recvbg": "0",
         "net.inet.tcp.drop_synfin": "1",
-        "net.inet.tcp.reass.overflows": "499",
+        "net.inet.tcp.reass.overflows": "0",
         "net.inet.tcp.slowlink_wsize": "8192",
         "net.inet.tcp.maxseg_unacked": "8",
         "net.inet.tcp.rfc3465": "1",
@@ -665,8 +690,8 @@
         "net.inet.tcp.microuptime_init": "705630",
         "net.inet.tcp.minmss": "216",
         "net.inet.tcp.do_tcpdrain": "0",
-        "net.inet.tcp.pcbcount": "4659",
-        "net.inet.tcp.tw_pcbcount": "1",
+        "net.inet.tcp.pcbcount": "3491",
+        "net.inet.tcp.tw_pcbcount": "0",
         "net.inet.tcp.icmp_may_rst": "1",
         "net.inet.tcp.rtt_min": "100",
         "net.inet.tcp.rexmt_slop": "200",
@@ -679,14 +704,14 @@
         "net.inet.tcp.always_keepalive": "0",
         "net.inet.tcp.timer_fastmode_idlemax": "10",
         "net.inet.tcp.broken_peer_syn_rexmit_thres": "10",
-        "net.inet.tcp.tcp_timer_advanced": "212",
-        "net.inet.tcp.tcp_resched_timerlist": "628588",
+        "net.inet.tcp.tcp_timer_advanced": "117",
+        "net.inet.tcp.tcp_resched_timerlist": "404010",
         "net.inet.tcp.pmtud_blackhole_detection": "1",
         "net.inet.tcp.pmtud_blackhole_mss": "1200",
         "net.inet.tcp.cc_debug": "0",
         "net.inet.tcp.newreno_sockets": "0",
         "net.inet.tcp.background_sockets": "0",
-        "net.inet.tcp.cubic_sockets": "4648",
+        "net.inet.tcp.cubic_sockets": "3471",
         "net.inet.tcp.use_newreno": "0",
         "net.inet.tcp.cubic_tcp_friendliness": "0",
         "net.inet.tcp.cubic_fast_convergence": "0",
@@ -702,7 +727,7 @@
         "net.inet.udp.recvspace": "196724",
         "net.inet.udp.log_in_vain": "0",
         "net.inet.udp.blackhole": "0",
-        "net.inet.udp.pcbcount": "286",
+        "net.inet.udp.pcbcount": "194",
         "net.inet.udp.randomize_ports": "1",
         "net.inet.ipsec.def_policy": "1",
         "net.inet.ipsec.esp_trans_deflev": "1",
@@ -720,7 +745,7 @@
         "net.inet.log_restricted": "0",
         "net.inet.raw.maxdgram": "8192",
         "net.inet.raw.recvspace": "8192",
-        "net.inet.raw.pcbcount": "3",
+        "net.inet.raw.pcbcount": "2",
         "net.inet.mptcp.enable": "1",
         "net.inet.mptcp.mptcp_cap_retr": "2",
         "net.inet.mptcp.dss_csum": "0",
@@ -779,7 +804,7 @@
         "net.link.generic.system.threshold_interval": "2",
         "net.link.generic.system.enable_netagent": "0",
         "net.link.generic.system.port_used.entry_count": "0",
-        "net.link.generic.system.port_used.entry_gen": "4",
+        "net.link.generic.system.port_used.entry_gen": "2",
         "net.link.generic.system.port_used.verbose": "0",
         "net.link.generic.system.port_used.wakeuuid_not_set_count": "0",
         "net.link.generic.system.port_used.wakeuuid_not_set_last_time": "{ sec = 0, usec = 0 } Thu Jan  1 07:30:00 1970",
@@ -846,7 +871,7 @@
         "net.inet6.ip6.use_deprecated": "1",
         "net.inet6.ip6.rr_prune": "5",
         "net.inet6.ip6.v6only": "0",
-        "net.inet6.ip6.rtexpire": "2400",
+        "net.inet6.ip6.rtexpire": "3600",
         "net.inet6.ip6.rtminexpire": "10",
         "net.inet6.ip6.rtmaxcache": "128",
         "net.inet6.ip6.use_tempaddr": "1",
@@ -935,11 +960,11 @@
         "net.necp.socket_non_app_policy_count": "20",
         "net.necp.ip_policy_count": "8",
         "net.necp.session_count": "5",
-        "net.necp.client_fd_count": "107",
-        "net.necp.client_count": "274",
+        "net.necp.client_fd_count": "106",
+        "net.necp.client_count": "222",
         "net.necp.arena_count": "0",
         "net.necp.nexus_flow_count": "0",
-        "net.necp.socket_flow_count": "51",
+        "net.necp.socket_flow_count": "39",
         "net.necp.if_flow_count": "0",
         "net.necp.observer_fd_count": "0",
         "net.necp.observer_message_limit": "256",
@@ -993,9 +1018,9 @@
         "interfaces": {
           "lo0": {
             "rx": {
-              "bytes": "434508",
+              "bytes": "267339",
               "packets": "0",
-              "errors": "391894425",
+              "errors": "367132074",
               "drop": 0,
               "overrun": 0,
               "frame": 0,
@@ -1005,7 +1030,7 @@
             "tx": {
               "bytes": "0",
               "packets": "0",
-              "errors": "391894425",
+              "errors": "367132074",
               "drop": 0,
               "overrun": 0,
               "collisions": "0",
@@ -1147,8 +1172,8 @@
           },
           "en0": {
             "rx": {
-              "bytes": "30533234472",
-              "packets": "34656010",
+              "bytes": "21741505591",
+              "packets": "24011575",
               "errors": "0",
               "drop": 0,
               "overrun": 0,
@@ -1157,9 +1182,9 @@
               "multicast": 0
             },
             "tx": {
-              "bytes": "13191104011",
-              "packets": "42910924",
-              "errors": "17969",
+              "bytes": "8413041550",
+              "packets": "28798437",
+              "errors": "10054",
               "drop": 0,
               "overrun": 0,
               "collisions": "0",
@@ -1201,8 +1226,8 @@
               "multicast": 0
             },
             "tx": {
-              "bytes": "562882",
-              "packets": "2558",
+              "bytes": "321297",
+              "packets": "1431",
               "errors": "0",
               "drop": 0,
               "overrun": 0,
@@ -1323,9 +1348,9 @@
           },
           "utun1": {
             "rx": {
-              "bytes": "2464",
+              "bytes": "1629",
               "packets": "0",
-              "errors": "519852",
+              "errors": "339584",
               "drop": 0,
               "overrun": 0,
               "frame": 0,
@@ -1335,7 +1360,7 @@
             "tx": {
               "bytes": "0",
               "packets": "0",
-              "errors": "859371",
+              "errors": "610117",
               "drop": 0,
               "overrun": 0,
               "collisions": "0",
@@ -1387,6 +1412,28 @@
               "compressed": 0
             }
           },
+          "en5": {
+            "rx": {
+              "bytes": "916089",
+              "packets": "4199",
+              "errors": "0",
+              "drop": 0,
+              "overrun": 0,
+              "frame": 0,
+              "compressed": 0,
+              "multicast": 0
+            },
+            "tx": {
+              "bytes": "3465241",
+              "packets": "3756",
+              "errors": "531",
+              "drop": 0,
+              "overrun": 0,
+              "collisions": "0",
+              "carrier": 0,
+              "compressed": 0
+            }
+          },
           "vboxnet0": {
             "rx": {
               "bytes": "50",
@@ -1411,8 +1458,8 @@
           },
           "vboxnet1": {
             "rx": {
-              "bytes": "473436",
-              "packets": "1437",
+              "bytes": "732",
+              "packets": "12",
               "errors": "0",
               "drop": 0,
               "overrun": 0,
@@ -1421,8 +1468,8 @@
               "multicast": 0
             },
             "tx": {
-              "bytes": "992636",
-              "packets": "21135",
+              "bytes": "4962",
+              "packets": "292",
               "errors": "0",
               "drop": 0,
               "overrun": 0,
@@ -1446,28 +1493,6 @@
               "bytes": "0",
               "packets": "0",
               "errors": "0",
-              "drop": 0,
-              "overrun": 0,
-              "collisions": "0",
-              "carrier": 0,
-              "compressed": 0
-            }
-          },
-          "en5": {
-            "rx": {
-              "bytes": "377094",
-              "packets": "2493",
-              "errors": "0",
-              "drop": 0,
-              "overrun": 0,
-              "frame": 0,
-              "compressed": 0,
-              "multicast": 0
-            },
-            "tx": {
-              "bytes": "3253845",
-              "packets": "2248",
-              "errors": "616",
               "drop": 0,
               "overrun": 0,
               "collisions": "0",
@@ -1511,13 +1536,13 @@
           "version": "1.4",
           "size": 36864,
           "index": "11",
-          "refcount": "30"
+          "refcount": "31"
         },
         "com.apple.iokit.IOPCIFamily": {
           "version": "2.9",
           "size": 217088,
           "index": "12",
-          "refcount": "36"
+          "refcount": "37"
         },
         "com.apple.driver.AppleSMC": {
           "version": "3.1.9",
@@ -1685,7 +1710,7 @@
           "version": "2.0.0",
           "size": 503808,
           "index": "42",
-          "refcount": "10"
+          "refcount": "11"
         },
         "com.apple.iokit.IOSMBusFamily": {
           "version": "1.1",
@@ -1739,7 +1764,7 @@
           "version": "900.4.1",
           "size": 634880,
           "index": "51",
-          "refcount": "3"
+          "refcount": "4"
         },
         "com.apple.driver.usb.AppleUSBHostPacketFilter": {
           "version": "1.0",
@@ -2033,7 +2058,7 @@
           "version": "519.21",
           "size": 299008,
           "index": "112",
-          "refcount": "13"
+          "refcount": "14"
         },
         "com.apple.driver.AppleMCCSControl": {
           "version": "1.5.5",
@@ -2141,7 +2166,7 @@
           "version": "206.5",
           "size": 258048,
           "index": "136",
-          "refcount": "1"
+          "refcount": "2"
         },
         "com.apple.driver.AppleGFXHDA": {
           "version": "100.1.17",
@@ -2298,6 +2323,18 @@
           "size": 405504,
           "index": "181",
           "refcount": "0"
+        },
+        "com.apple.iokit.IOUSBHIDDriver": {
+          "version": "900.4.1",
+          "size": 36864,
+          "index": "261",
+          "refcount": "0"
+        },
+        "com.apple.driver.AudioAUUC": {
+          "version": "1.70",
+          "size": 20480,
+          "index": "262",
+          "refcount": "0"
         }
       }
     },
@@ -2309,9 +2346,9 @@
     "platform_family": "mac_os_x",
     "memory": {
       "total": "16384MB",
-      "active": "9658MB",
-      "inactive": "4835MB",
-      "free": "1889MB"
+      "active": "9144MB",
+      "inactive": "4858MB",
+      "free": "2379MB"
     },
     "dmi": {
 
@@ -2351,14 +2388,14 @@
         }
       ],
       "battery": {
-        "current_capacity": 2654,
-        "max_capacity": 4642,
-        "fully_charged": false,
-        "is_charging": true,
-        "charge_cycle_count": 232,
+        "current_capacity": 4778,
+        "max_capacity": 4784,
+        "fully_charged": true,
+        "is_charging": false,
+        "charge_cycle_count": 226,
         "health": "Good",
         "serial": "F8Y829302CEJ7PY6F",
-        "remaining": 57
+        "remaining": 99
       }
     },
     "virtualization": {
@@ -3934,7 +3971,7 @@
         "RemoteManagers": null
       }
     },
-    "ohai_time": 1566665142.1362638,
+    "ohai_time": 1566025500.8014998,
     "cpu": {
       "cores": 4,
       "total": 8,
@@ -4008,11 +4045,11 @@
         "/dev/disk1s1": {
           "block_size": 512,
           "kb_size": "488245288",
-          "kb_used": "403609564",
-          "kb_available": "75854908",
-          "percent_used": "85%",
-          "inodes_used": "1567638",
-          "inodes_available": "9223372036853208169",
+          "kb_used": "399032820",
+          "kb_available": "82203176",
+          "percent_used": "83%",
+          "inodes_used": "1557185",
+          "inodes_available": "9223372036853218622",
           "total_inodes": "9223372036854775807",
           "inodes_percent_used": "0%",
           "fs_type": "apfs",
@@ -4046,11 +4083,11 @@
         "/dev/disk1s4": {
           "block_size": 512,
           "kb_size": "488245288",
-          "kb_used": "8093748",
-          "kb_available": "75854908",
-          "percent_used": "10%",
-          "inodes_used": "7",
-          "inodes_available": "9223372036854775800",
+          "kb_used": "6322224",
+          "kb_available": "82203176",
+          "percent_used": "8%",
+          "inodes_used": "6",
+          "inodes_available": "9223372036854775801",
           "total_inodes": "9223372036854775807",
           "inodes_percent_used": "0%",
           "fs_type": "apfs",
@@ -4103,40 +4140,17 @@
           "mounts": [
             "/home"
           ]
-        },
-        "/Users/tio/Downloads/Atom.app": {
-          "block_size": 512,
-          "kb_size": "488245288",
-          "kb_used": "402080924",
-          "kb_available": "79825796",
-          "percent_used": "84%",
-          "inodes_used": "1563006",
-          "inodes_available": "9223372036853212801",
-          "total_inodes": "9223372036854775807",
-          "inodes_percent_used": "0%",
-          "fs_type": "nullfs",
-          "mount_options": [
-            "local",
-            "nodev",
-            "nosuid",
-            "read-only",
-            "nobrowse",
-            "mounted by tio"
-          ],
-          "mounts": [
-            "/private/var/folders/01/hsv9krt93yn51b4b2lkvmbgh0000gn/T/AppTranslocation/218387A3-C03B-431F-B95C-049665593F33"
-          ]
         }
       },
       "by_mountpoint": {
         "/": {
           "block_size": 512,
           "kb_size": "488245288",
-          "kb_used": "403609564",
-          "kb_available": "75854908",
-          "percent_used": "85%",
-          "inodes_used": "1567638",
-          "inodes_available": "9223372036853208169",
+          "kb_used": "399032820",
+          "kb_available": "82203176",
+          "percent_used": "83%",
+          "inodes_used": "1557185",
+          "inodes_available": "9223372036853218622",
           "total_inodes": "9223372036854775807",
           "inodes_percent_used": "0%",
           "fs_type": "apfs",
@@ -4170,11 +4184,11 @@
         "/private/var/vm": {
           "block_size": 512,
           "kb_size": "488245288",
-          "kb_used": "8093748",
-          "kb_available": "75854908",
-          "percent_used": "10%",
-          "inodes_used": "7",
-          "inodes_available": "9223372036854775800",
+          "kb_used": "6322224",
+          "kb_available": "82203176",
+          "percent_used": "8%",
+          "inodes_used": "6",
+          "inodes_available": "9223372036854775801",
           "total_inodes": "9223372036854775807",
           "inodes_percent_used": "0%",
           "fs_type": "apfs",
@@ -4227,29 +4241,6 @@
           "devices": [
             "map auto_home"
           ]
-        },
-        "/private/var/folders/01/hsv9krt93yn51b4b2lkvmbgh0000gn/T/AppTranslocation/218387A3-C03B-431F-B95C-049665593F33": {
-          "block_size": 512,
-          "kb_size": "488245288",
-          "kb_used": "402080924",
-          "kb_available": "79825796",
-          "percent_used": "84%",
-          "inodes_used": "1563006",
-          "inodes_available": "9223372036853212801",
-          "total_inodes": "9223372036854775807",
-          "inodes_percent_used": "0%",
-          "fs_type": "nullfs",
-          "mount_options": [
-            "local",
-            "nodev",
-            "nosuid",
-            "read-only",
-            "nobrowse",
-            "mounted by tio"
-          ],
-          "devices": [
-            "/Users/tio/Downloads/Atom.app"
-          ]
         }
       },
       "by_pair": {
@@ -4257,11 +4248,11 @@
           "block_size": 512,
           "device": "/dev/disk1s1",
           "kb_size": "488245288",
-          "kb_used": "403609564",
-          "kb_available": "75854908",
-          "percent_used": "85%",
-          "inodes_used": "1567638",
-          "inodes_available": "9223372036853208169",
+          "kb_used": "399032820",
+          "kb_available": "82203176",
+          "percent_used": "83%",
+          "inodes_used": "1557185",
+          "inodes_available": "9223372036853218622",
           "total_inodes": "9223372036854775807",
           "inodes_percent_used": "0%",
           "mount": "/",
@@ -4293,11 +4284,11 @@
           "block_size": 512,
           "device": "/dev/disk1s4",
           "kb_size": "488245288",
-          "kb_used": "8093748",
-          "kb_available": "75854908",
-          "percent_used": "10%",
-          "inodes_used": "7",
-          "inodes_available": "9223372036854775800",
+          "kb_used": "6322224",
+          "kb_available": "82203176",
+          "percent_used": "8%",
+          "inodes_used": "6",
+          "inodes_available": "9223372036854775801",
           "total_inodes": "9223372036854775807",
           "inodes_percent_used": "0%",
           "mount": "/private/var/vm",
@@ -4345,28 +4336,6 @@
           "mount_options": [
             "automounted",
             "nobrowse"
-          ]
-        },
-        "/Users/tio/Downloads/Atom.app,/private/var/folders/01/hsv9krt93yn51b4b2lkvmbgh0000gn/T/AppTranslocation/218387A3-C03B-431F-B95C-049665593F33": {
-          "block_size": 512,
-          "device": "/Users/tio/Downloads/Atom.app",
-          "kb_size": "488245288",
-          "kb_used": "402080924",
-          "kb_available": "79825796",
-          "percent_used": "84%",
-          "inodes_used": "1563006",
-          "inodes_available": "9223372036853212801",
-          "total_inodes": "9223372036854775807",
-          "inodes_percent_used": "0%",
-          "mount": "/private/var/folders/01/hsv9krt93yn51b4b2lkvmbgh0000gn/T/AppTranslocation/218387A3-C03B-431F-B95C-049665593F33",
-          "fs_type": "nullfs",
-          "mount_options": [
-            "local",
-            "nodev",
-            "nosuid",
-            "read-only",
-            "nobrowse",
-            "mounted by tio"
           ]
         }
       }
@@ -4584,7 +4553,7 @@
             "_detailLevel": "0"
           }
         },
-        "_timeStamp": "2019-08-24T16:45:42+00:00",
+        "_timeStamp": "2019-08-17T07:05:01+00:00",
         "_versionInfo": {
           "com.apple.SystemProfiler.SPPlatformReporter": "1445"
         }
@@ -4685,25 +4654,359 @@
     "name": "devhost",
     "chef_environment": "_default",
     "recipes": [
-      "hello",
-      "hello::default"
+      "search_data",
+      "search_data::default"
     ],
     "expanded_run_list": [
-      "hello::default"
+      "search_data::default"
     ],
     "roles": [
-      "bar",
-      "foo"
+
     ],
     "cookbooks": {
-      "hello": {
+      "search_data": {
         "version": "0.1.0"
       }
     }
   },
   "run_list": [
-    "role[bar]",
-    "recipe[hello]",
-    "role[foo]"
+    "recipe[search_data]"
+  ],
+  "json_class": "Chef::Node",
+  "chef_type": "node",
+  "chef_environment": "_default",
+  "override": {
+
+  },
+  "default": {
+
+  }
+}
+--- END RESPONSE ---
+[2019-08-18T22:21:02+08:00] DEBUG: Extracting run list from JSON attributes provided on command line
+[2019-08-18T22:21:02+08:00] DEBUG: Applying attributes from json file
+[2019-08-18T22:21:02+08:00] DEBUG: Platform is mac_os_x version 10.13.6
+[2019-08-18T22:21:02+08:00] WARN: Run List override has been provided.
+[2019-08-18T22:21:02+08:00] WARN: Original Run List: [recipe[search_data]]
+[2019-08-18T22:21:02+08:00] WARN: Overridden Run List: [recipe[search_data]]
+[2019-08-18T22:21:02+08:00] INFO: Run List is [recipe[search_data]]
+[2019-08-18T22:21:02+08:00] INFO: Run List expands to [search_data]
+[2019-08-18T22:21:02+08:00] INFO: Starting Chef Run for devhost
+[2019-08-18T22:21:02+08:00] INFO: Running start handlers
+[2019-08-18T22:21:02+08:00] INFO: Start handlers complete.
+[2019-08-18T22:21:02+08:00] DEBUG: POST /organizations/chef/reports/nodes/devhost/runs
+--- POST BODY ---
+{"action":"start","run_id":"9a5c3035-86ef-4dc2-ae0c-1c32cf73308b","start_time":"2019-08-18 22:21:02 +0800"}
+--- END POST BODY ---
+[2019-08-18T22:21:02+08:00] DEBUG: #<ChefZero::RestRequest:0x00007ff910827b28
+ @body=
+  "{\"action\":\"start\",\"run_id\":\"9a5c3035-86ef-4dc2-ae0c-1c32cf73308b\",\"start_time\":\"2019-08-18 22:21:02 +0800\"}",
+ @env=
+  {"SCRIPT_NAME"=>"",
+   "SERVER_NAME"=>"localhost",
+   "REQUEST_METHOD"=>"POST",
+   "PATH_INFO"=>"/reports/nodes/devhost/runs",
+   "QUERY_STRING"=>nil,
+   "SERVER_PORT"=>1,
+   "HTTP_HOST"=>"localhost:1",
+   "HTTP_X_OPS_SERVER_API_VERSION"=>"1",
+   "rack.url_scheme"=>"chefzero",
+   "rack.input"=>#<StringIO:0x00007ff910827ba0>},
+ @rest_base_prefix=["organizations", "chef"],
+ @rest_path=["organizations", "chef", "reports", "nodes", "devhost", "runs"]>
+
+[2019-08-18T22:21:02+08:00] DEBUG: 
+--- RESPONSE (404) ---
+{
+  "error": [
+    "Object not found: "
   ]
 }
+--- END RESPONSE ---
+resolving cookbooks for run list: ["search_data"][0m
+[2019-08-18T22:21:03+08:00] DEBUG: POST /organizations/chef/environments/_default/cookbook_versions
+--- POST BODY ---
+{"run_list":["search_data"]}
+--- END POST BODY ---
+[2019-08-18T22:21:03+08:00] DEBUG: #<ChefZero::RestRequest:0x00007ff912a92ed8
+ @body="{\"run_list\":[\"search_data\"]}",
+ @env=
+  {"SCRIPT_NAME"=>"",
+   "SERVER_NAME"=>"localhost",
+   "REQUEST_METHOD"=>"POST",
+   "PATH_INFO"=>"/environments/_default/cookbook_versions",
+   "QUERY_STRING"=>nil,
+   "SERVER_PORT"=>1,
+   "HTTP_HOST"=>"localhost:1",
+   "HTTP_X_OPS_SERVER_API_VERSION"=>"2",
+   "rack.url_scheme"=>"chefzero",
+   "rack.input"=>#<StringIO:0x00007ff912a931f8>},
+ @rest_base_prefix=["organizations", "chef"],
+ @rest_path=
+  ["organizations", "chef", "environments", "_default", "cookbook_versions"]>
+
+[2019-08-18T22:21:03+08:00] DEBUG: 
+--- RESPONSE (200) ---
+{
+  "search_data": {
+    "all_files": [
+      {
+        "name": "root_files/kitchen.yml",
+        "path": "kitchen.yml",
+        "checksum": "f6b2db59700a7a14b355fece8bedc5ae",
+        "specificity": "default",
+        "url": "chefzero://localhost:1/file_store/repo/cookbooks/search_data/kitchen.yml"
+      },
+      {
+        "name": "root_files/LICENSE",
+        "path": "LICENSE",
+        "checksum": "1d1c9ae2289377a52e9dcec0a6d255b6",
+        "specificity": "default",
+        "url": "chefzero://localhost:1/file_store/repo/cookbooks/search_data/LICENSE"
+      },
+      {
+        "name": "test/default_test.rb",
+        "path": "test/integration/default/default_test.rb",
+        "checksum": "3c9128ad770098fcccf4b85d0a234d1a",
+        "specificity": "default",
+        "url": "chefzero://localhost:1/file_store/repo/cookbooks/search_data/test/integration/default/default_test.rb"
+      },
+      {
+        "name": "root_files/CHANGELOG.md",
+        "path": "CHANGELOG.md",
+        "checksum": "dbf0cb38c2185c3a62962010a4c2db52",
+        "specificity": "default",
+        "url": "chefzero://localhost:1/file_store/repo/cookbooks/search_data/CHANGELOG.md"
+      },
+      {
+        "name": "root_files/Berksfile",
+        "path": "Berksfile",
+        "checksum": "8c8bbef226c6ee425efaf94c201f4152",
+        "specificity": "default",
+        "url": "chefzero://localhost:1/file_store/repo/cookbooks/search_data/Berksfile"
+      },
+      {
+        "name": "spec/spec_helper.rb",
+        "path": "spec/spec_helper.rb",
+        "checksum": "b8101caaeba977d51dc1fa5dd6282ded",
+        "specificity": "default",
+        "url": "chefzero://localhost:1/file_store/repo/cookbooks/search_data/spec/spec_helper.rb"
+      },
+      {
+        "name": "spec/default_spec.rb",
+        "path": "spec/unit/recipes/default_spec.rb",
+        "checksum": "b9fc687e4f362aeea7342ad547cf6833",
+        "specificity": "default",
+        "url": "chefzero://localhost:1/file_store/repo/cookbooks/search_data/spec/unit/recipes/default_spec.rb"
+      },
+      {
+        "name": "root_files/Berksfile.lock",
+        "path": "Berksfile.lock",
+        "checksum": "7e29a95dfcdab477b904f1f7a1c05b53",
+        "specificity": "default",
+        "url": "chefzero://localhost:1/file_store/repo/cookbooks/search_data/Berksfile.lock"
+      },
+      {
+        "name": "root_files/README.md",
+        "path": "README.md",
+        "checksum": "5049e7fb8558f0fb4aa0abadeebad4b0",
+        "specificity": "default",
+        "url": "chefzero://localhost:1/file_store/repo/cookbooks/search_data/README.md"
+      },
+      {
+        "name": "root_files/.gitignore",
+        "path": ".gitignore",
+        "checksum": "ddcd60b1350fde0d1fc8c5e9a5d491a5",
+        "specificity": "default",
+        "url": "chefzero://localhost:1/file_store/repo/cookbooks/search_data/.gitignore"
+      },
+      {
+        "name": "recipes/kitchen.log",
+        "path": "recipes/.kitchen/logs/kitchen.log",
+        "checksum": "d1786254a35a2315d41be7c6d0b3060a",
+        "specificity": "default",
+        "url": "chefzero://localhost:1/file_store/repo/cookbooks/search_data/recipes/.kitchen/logs/kitchen.log"
+      },
+      {
+        "name": "recipes/default.rb",
+        "path": "recipes/default.rb",
+        "checksum": "f15d7fe3fcfe284d83957f3a720f35f0",
+        "specificity": "default",
+        "url": "chefzero://localhost:1/file_store/repo/cookbooks/search_data/recipes/default.rb"
+      },
+      {
+        "name": "root_files/metadata.rb",
+        "path": "metadata.rb",
+        "checksum": "e68a12396a12edafb7ecb6d1e963a7fc",
+        "specificity": "default",
+        "url": "chefzero://localhost:1/file_store/repo/cookbooks/search_data/metadata.rb"
+      },
+      {
+        "name": "root_files/chefignore",
+        "path": "chefignore",
+        "checksum": "8218f5e138ec098a9ec618082f05a9b8",
+        "specificity": "default",
+        "url": "chefzero://localhost:1/file_store/repo/cookbooks/search_data/chefignore"
+      }
+    ],
+    "metadata": {
+      "name": "search_data",
+      "description": "Installs/Configures search_nodes",
+      "maintainer": "The Authors",
+      "maintainer_email": "you@example.com",
+      "license": "All Rights Reserved",
+      "platforms": {
+
+      },
+      "dependencies": {
+
+      },
+      "providing": {
+        "search_data::kitchen.log": ">= 0.0.0",
+        "search_data": ">= 0.0.0"
+      },
+      "recipes": {
+        "search_data::kitchen.log": "",
+        "search_data": ""
+      },
+      "version": "0.1.0",
+      "source_url": "",
+      "issues_url": "",
+      "privacy": false,
+      "chef_versions": [
+        [
+          ">= 13.0"
+        ]
+      ],
+      "ohai_versions": [
+
+      ],
+      "gems": [
+
+      ]
+    },
+    "version": "0.1.0",
+    "name": "search_data-0.1.0",
+    "cookbook_name": "search_data",
+    "frozen?": false,
+    "chef_type": "cookbook_version",
+    "json_class": "Chef::CookbookVersion"
+  }
+}
+--- END RESPONSE ---
+[2019-08-18T22:21:03+08:00] INFO: Loading cookbooks [search_data@0.1.0]
+[2019-08-18T22:21:03+08:00] INFO: Skipping removal of obsoleted cookbooks from the cache
+Synchronizing Cookbooks:[0m
+  - search_data (0.1.0)[0m
+Installing Cookbook Gems:[0m
+Compiling Cookbooks...[0m
+[2019-08-18T22:21:03+08:00] DEBUG: Cookbooks to compile: [:search_data]
+[2019-08-18T22:21:03+08:00] DEBUG: POST /organizations/chef/search/profiles
+--- POST BODY ---
+{"phase":["phase"],"name":["id"],"version":["sec_os_rhel_7"]}
+--- END POST BODY ---
+[2019-08-18T22:21:03+08:00] DEBUG: #<ChefZero::RestRequest:0x00007ff912a070b8
+ @body=
+  "{\"phase\":[\"phase\"],\"name\":[\"id\"],\"version\":[\"sec_os_rhel_7\"]}",
+ @env=
+  {"SCRIPT_NAME"=>"",
+   "SERVER_NAME"=>"localhost",
+   "REQUEST_METHOD"=>"POST",
+   "PATH_INFO"=>"/search/profiles",
+   "QUERY_STRING"=>"q=country:id&start=0&rows=1000",
+   "SERVER_PORT"=>1,
+   "HTTP_HOST"=>"localhost:1",
+   "HTTP_X_OPS_SERVER_API_VERSION"=>"1",
+   "rack.url_scheme"=>"chefzero",
+   "rack.input"=>#<StringIO:0x00007ff912a07108>},
+ @rest_base_prefix=["organizations", "chef"],
+ @rest_path=["organizations", "chef", "search", "profiles"]>
+
+[2019-08-18T22:21:03+08:00] DEBUG: 
+--- RESPONSE (200) ---
+{
+  "rows": [
+    {
+      "url": "chefzero://localhost:1/data/profiles/dev_id",
+      "data": {
+        "phase": "dev",
+        "name": "dev_id",
+        "version": "1.0.1"
+      }
+    },
+    {
+      "url": "chefzero://localhost:1/data/profiles/prod_id",
+      "data": {
+        "phase": "production",
+        "name": "prod_id",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "url": "chefzero://localhost:1/data/profiles/sit_id",
+      "data": {
+        "phase": "sit",
+        "name": "sit_id",
+        "version": "1.0.2"
+      }
+    },
+    {
+      "url": "chefzero://localhost:1/data/profiles/uat_id",
+      "data": {
+        "phase": "uat",
+        "name": "uat_id",
+        "version": "1.0.2"
+      }
+    }
+  ],
+  "start": 0,
+  "total": 4
+}
+--- END RESPONSE ---
+dev_id
+dev
+1.0.1
+prod_id
+production
+1.0.0
+sit_id
+sit
+1.0.2
+uat_id
+uat
+1.0.2
+[2019-08-18T22:21:03+08:00] DEBUG: GET /organizations/chef/required_recipe
+[2019-08-18T22:21:03+08:00] DEBUG: #<ChefZero::RestRequest:0x00007ff91297a618
+ @env=
+  {"SCRIPT_NAME"=>"",
+   "SERVER_NAME"=>"localhost",
+   "REQUEST_METHOD"=>"GET",
+   "PATH_INFO"=>"/required_recipe",
+   "QUERY_STRING"=>nil,
+   "SERVER_PORT"=>1,
+   "HTTP_HOST"=>"localhost:1",
+   "HTTP_X_OPS_SERVER_API_VERSION"=>"1",
+   "rack.url_scheme"=>"chefzero",
+   "rack.input"=>#<StringIO:0x00007ff91297a668>},
+ @rest_base_prefix=["organizations", "chef"],
+ @rest_path=["organizations", "chef", "required_recipe"]>
+
+[2019-08-18T22:21:03+08:00] DEBUG: 
+--- RESPONSE (404) ---
+{
+  "error": [
+    "Object not found: "
+  ]
+}
+--- END RESPONSE ---
+Converging 0 resources[0m
+[2019-08-18T22:21:03+08:00] DEBUG: Converging node devhost
+[2019-08-18T22:21:03+08:00] WARN: Skipping final node save because override_runlist was given
+[2019-08-18T22:21:03+08:00] INFO: Chef Run complete in 0.328471 seconds
+[2019-08-18T22:21:03+08:00] INFO: Skipping removal of unused files from the cache
+[0m
+Running handlers:[0m
+[2019-08-18T22:21:03+08:00] INFO: Running report handlers
+Running handlers complete
+[0m[2019-08-18T22:21:03+08:00] INFO: Report handlers complete
+Chef Client finished, 0/0 resources updated in 06 seconds[0m

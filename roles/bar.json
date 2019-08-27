@@ -1,0 +1,18 @@
+{
+  "name": "bar",
+  "description": "",
+  "json_class": "Chef::Role",
+  "default_attributes": {
+    "message": "bar role msg default_attributes"
+  },
+  "override_attributes": {
+    "message": "bar role msg override_attributes"
+  },
+  "chef_type": "role",
+  "run_list": [
+
+  ],
+  "env_run_lists": {
+
+  }
+}

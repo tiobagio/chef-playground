@@ -1,3 +1,32 @@
+[2019-08-25T00:43:53+08:00] INFO: Started chef-zero at chefzero://localhost:1 with repository at /Users/tio/mydemo/chef-playground
+  One version per cookbook
+
+[2019-08-25T00:43:53+08:00] DEBUG: Running Ohai with the following configuration: {:logger=>Chef::Log}
+Starting Chef Client, version 14.6.47[0m
+[2019-08-25T00:43:53+08:00] INFO: *** Chef 14.6.47 ***
+[2019-08-25T00:43:53+08:00] INFO: Platform: x86_64-darwin15
+[2019-08-25T00:43:53+08:00] INFO: Chef-client pid: 97403
+[2019-08-25T00:43:53+08:00] DEBUG: Chef-client request_id: 5f71b411-a426-46c3-937d-f2b80ebc2e3d
+[2019-08-25T00:43:53+08:00] DEBUG: Running Ohai with the following configuration: {:logger=>Chef::Log}
+[2019-08-25T00:43:53+08:00] INFO: The plugin path /etc/chef/ohai/plugins does not exist. Skipping...
+[2019-08-25T00:43:57+08:00] DEBUG: GET /organizations/chef/nodes/devhost
+[2019-08-25T00:43:57+08:00] DEBUG: #<ChefZero::RestRequest:0x00007f9ffb3925e0
+ @env=
+  {"SCRIPT_NAME"=>"",
+   "SERVER_NAME"=>"localhost",
+   "REQUEST_METHOD"=>"GET",
+   "PATH_INFO"=>"/nodes/devhost",
+   "QUERY_STRING"=>nil,
+   "SERVER_PORT"=>1,
+   "HTTP_HOST"=>"localhost:1",
+   "HTTP_X_OPS_SERVER_API_VERSION"=>"1",
+   "rack.url_scheme"=>"chefzero",
+   "rack.input"=>#<StringIO:0x00007f9ffb3fc058>},
+ @rest_base_prefix=["organizations", "chef"],
+ @rest_path=["organizations", "chef", "nodes", "devhost"]>
+
+[2019-08-25T00:43:57+08:00] DEBUG: 
+--- RESPONSE (200) ---
 {
   "name": "devhost",
   "override": {
@@ -6,15 +35,14 @@
   "normal": {
     "tags": [
 
-    ],
-    "message": "attribute from attribute file"
+    ]
   },
   "default": {
     "message": "foo role message default_attributes"
   },
   "automatic": {
-    "uptime_seconds": 1696170,
-    "uptime": "19 days 15 hours 09 minutes 30 seconds",
+    "uptime_seconds": 1694551,
+    "uptime": "19 days 14 hours 42 minutes 31 seconds",
     "chef_packages": {
       "chef": {
         "version": "14.6.47",
@@ -220,6 +248,7 @@
           "arp": {
             "192.168.1.1": "f8:32:e4:ec:5c:30",
             "192.168.1.8": "38:b1:db:2d:fb:5c",
+            "192.168.1.100": "d0:4f:7e:5e:4c:8c",
             "192.168.1.142": "f8:95:ea:78:b2:35",
             "192.168.1.191": "d8:31:34:68:d5:19",
             "192.168.1.255": "ff:ff:ff:ff:ff:ff",
@@ -665,8 +694,8 @@
         "net.inet.tcp.microuptime_init": "705630",
         "net.inet.tcp.minmss": "216",
         "net.inet.tcp.do_tcpdrain": "0",
-        "net.inet.tcp.pcbcount": "4659",
-        "net.inet.tcp.tw_pcbcount": "1",
+        "net.inet.tcp.pcbcount": "4648",
+        "net.inet.tcp.tw_pcbcount": "0",
         "net.inet.tcp.icmp_may_rst": "1",
         "net.inet.tcp.rtt_min": "100",
         "net.inet.tcp.rexmt_slop": "200",
@@ -680,13 +709,13 @@
         "net.inet.tcp.timer_fastmode_idlemax": "10",
         "net.inet.tcp.broken_peer_syn_rexmit_thres": "10",
         "net.inet.tcp.tcp_timer_advanced": "212",
-        "net.inet.tcp.tcp_resched_timerlist": "628588",
+        "net.inet.tcp.tcp_resched_timerlist": "627690",
         "net.inet.tcp.pmtud_blackhole_detection": "1",
         "net.inet.tcp.pmtud_blackhole_mss": "1200",
         "net.inet.tcp.cc_debug": "0",
         "net.inet.tcp.newreno_sockets": "0",
-        "net.inet.tcp.background_sockets": "0",
-        "net.inet.tcp.cubic_sockets": "4648",
+        "net.inet.tcp.background_sockets": "1",
+        "net.inet.tcp.cubic_sockets": "4628",
         "net.inet.tcp.use_newreno": "0",
         "net.inet.tcp.cubic_tcp_friendliness": "0",
         "net.inet.tcp.cubic_fast_convergence": "0",
@@ -702,7 +731,7 @@
         "net.inet.udp.recvspace": "196724",
         "net.inet.udp.log_in_vain": "0",
         "net.inet.udp.blackhole": "0",
-        "net.inet.udp.pcbcount": "286",
+        "net.inet.udp.pcbcount": "283",
         "net.inet.udp.randomize_ports": "1",
         "net.inet.ipsec.def_policy": "1",
         "net.inet.ipsec.esp_trans_deflev": "1",
@@ -935,11 +964,11 @@
         "net.necp.socket_non_app_policy_count": "20",
         "net.necp.ip_policy_count": "8",
         "net.necp.session_count": "5",
-        "net.necp.client_fd_count": "107",
-        "net.necp.client_count": "274",
+        "net.necp.client_fd_count": "108",
+        "net.necp.client_count": "286",
         "net.necp.arena_count": "0",
         "net.necp.nexus_flow_count": "0",
-        "net.necp.socket_flow_count": "51",
+        "net.necp.socket_flow_count": "56",
         "net.necp.if_flow_count": "0",
         "net.necp.observer_fd_count": "0",
         "net.necp.observer_message_limit": "256",
@@ -993,9 +1022,9 @@
         "interfaces": {
           "lo0": {
             "rx": {
-              "bytes": "434508",
+              "bytes": "433906",
               "packets": "0",
-              "errors": "391894425",
+              "errors": "391836532",
               "drop": 0,
               "overrun": 0,
               "frame": 0,
@@ -1005,7 +1034,7 @@
             "tx": {
               "bytes": "0",
               "packets": "0",
-              "errors": "391894425",
+              "errors": "391836532",
               "drop": 0,
               "overrun": 0,
               "collisions": "0",
@@ -1147,8 +1176,8 @@
           },
           "en0": {
             "rx": {
-              "bytes": "30533234472",
-              "packets": "34656010",
+              "bytes": "30527681928",
+              "packets": "34632389",
               "errors": "0",
               "drop": 0,
               "overrun": 0,
@@ -1157,9 +1186,9 @@
               "multicast": 0
             },
             "tx": {
-              "bytes": "13191104011",
-              "packets": "42910924",
-              "errors": "17969",
+              "bytes": "13183524681",
+              "packets": "42864667",
+              "errors": "17903",
               "drop": 0,
               "overrun": 0,
               "collisions": "0",
@@ -1421,8 +1450,8 @@
               "multicast": 0
             },
             "tx": {
-              "bytes": "992636",
-              "packets": "21135",
+              "bytes": "991616",
+              "packets": "21071",
               "errors": "0",
               "drop": 0,
               "overrun": 0,
@@ -1455,8 +1484,8 @@
           },
           "en5": {
             "rx": {
-              "bytes": "377094",
-              "packets": "2493",
+              "bytes": "350729",
+              "packets": "2259",
               "errors": "0",
               "drop": 0,
               "overrun": 0,
@@ -1465,8 +1494,8 @@
               "multicast": 0
             },
             "tx": {
-              "bytes": "3253845",
-              "packets": "2248",
+              "bytes": "3224575",
+              "packets": "2014",
               "errors": "616",
               "drop": 0,
               "overrun": 0,
@@ -2309,9 +2338,9 @@
     "platform_family": "mac_os_x",
     "memory": {
       "total": "16384MB",
-      "active": "9658MB",
-      "inactive": "4835MB",
-      "free": "1889MB"
+      "active": "9799MB",
+      "inactive": "4903MB",
+      "free": "1680MB"
     },
     "dmi": {
 
@@ -2351,14 +2380,14 @@
         }
       ],
       "battery": {
-        "current_capacity": 2654,
+        "current_capacity": 1201,
         "max_capacity": 4642,
         "fully_charged": false,
         "is_charging": true,
         "charge_cycle_count": 232,
         "health": "Good",
         "serial": "F8Y829302CEJ7PY6F",
-        "remaining": 57
+        "remaining": 25
       }
     },
     "virtualization": {
@@ -3934,7 +3963,7 @@
         "RemoteManagers": null
       }
     },
-    "ohai_time": 1566665142.1362638,
+    "ohai_time": 1566663523.311231,
     "cpu": {
       "cores": 4,
       "total": 8,
@@ -4008,11 +4037,11 @@
         "/dev/disk1s1": {
           "block_size": 512,
           "kb_size": "488245288",
-          "kb_used": "403609564",
-          "kb_available": "75854908",
+          "kb_used": "403611268",
+          "kb_available": "74804624",
           "percent_used": "85%",
-          "inodes_used": "1567638",
-          "inodes_available": "9223372036853208169",
+          "inodes_used": "1567572",
+          "inodes_available": "9223372036853208235",
           "total_inodes": "9223372036854775807",
           "inodes_percent_used": "0%",
           "fs_type": "apfs",
@@ -4046,11 +4075,11 @@
         "/dev/disk1s4": {
           "block_size": 512,
           "kb_size": "488245288",
-          "kb_used": "8093748",
-          "kb_available": "75854908",
-          "percent_used": "10%",
-          "inodes_used": "7",
-          "inodes_available": "9223372036854775800",
+          "kb_used": "9142328",
+          "kb_available": "74804624",
+          "percent_used": "11%",
+          "inodes_used": "8",
+          "inodes_available": "9223372036854775799",
           "total_inodes": "9223372036854775807",
           "inodes_percent_used": "0%",
           "fs_type": "apfs",
@@ -4132,11 +4161,11 @@
         "/": {
           "block_size": 512,
           "kb_size": "488245288",
-          "kb_used": "403609564",
-          "kb_available": "75854908",
+          "kb_used": "403611268",
+          "kb_available": "74804624",
           "percent_used": "85%",
-          "inodes_used": "1567638",
-          "inodes_available": "9223372036853208169",
+          "inodes_used": "1567572",
+          "inodes_available": "9223372036853208235",
           "total_inodes": "9223372036854775807",
           "inodes_percent_used": "0%",
           "fs_type": "apfs",
@@ -4170,11 +4199,11 @@
         "/private/var/vm": {
           "block_size": 512,
           "kb_size": "488245288",
-          "kb_used": "8093748",
-          "kb_available": "75854908",
-          "percent_used": "10%",
-          "inodes_used": "7",
-          "inodes_available": "9223372036854775800",
+          "kb_used": "9142328",
+          "kb_available": "74804624",
+          "percent_used": "11%",
+          "inodes_used": "8",
+          "inodes_available": "9223372036854775799",
           "total_inodes": "9223372036854775807",
           "inodes_percent_used": "0%",
           "fs_type": "apfs",
@@ -4257,11 +4286,11 @@
           "block_size": 512,
           "device": "/dev/disk1s1",
           "kb_size": "488245288",
-          "kb_used": "403609564",
-          "kb_available": "75854908",
+          "kb_used": "403611268",
+          "kb_available": "74804624",
           "percent_used": "85%",
-          "inodes_used": "1567638",
-          "inodes_available": "9223372036853208169",
+          "inodes_used": "1567572",
+          "inodes_available": "9223372036853208235",
           "total_inodes": "9223372036854775807",
           "inodes_percent_used": "0%",
           "mount": "/",
@@ -4293,11 +4322,11 @@
           "block_size": 512,
           "device": "/dev/disk1s4",
           "kb_size": "488245288",
-          "kb_used": "8093748",
-          "kb_available": "75854908",
-          "percent_used": "10%",
-          "inodes_used": "7",
-          "inodes_available": "9223372036854775800",
+          "kb_used": "9142328",
+          "kb_available": "74804624",
+          "percent_used": "11%",
+          "inodes_used": "8",
+          "inodes_available": "9223372036854775799",
           "total_inodes": "9223372036854775807",
           "inodes_percent_used": "0%",
           "mount": "/private/var/vm",
@@ -4584,7 +4613,7 @@
             "_detailLevel": "0"
           }
         },
-        "_timeStamp": "2019-08-24T16:45:42+00:00",
+        "_timeStamp": "2019-08-24T16:18:44+00:00",
         "_versionInfo": {
           "com.apple.SystemProfiler.SPPlatformReporter": "1445"
         }
@@ -4705,5 +4734,294 @@
     "role[bar]",
     "recipe[hello]",
     "role[foo]"
+  ],
+  "json_class": "Chef::Node",
+  "chef_type": "node",
+  "chef_environment": "_default"
+}
+--- END RESPONSE ---
+[2019-08-25T00:43:57+08:00] DEBUG: Extracting run list from JSON attributes provided on command line
+[2019-08-25T00:43:57+08:00] DEBUG: Applying attributes from json file
+[2019-08-25T00:43:57+08:00] DEBUG: Platform is mac_os_x version 10.13.6
+[2019-08-25T00:43:57+08:00] WARN: Run List override has been provided.
+[2019-08-25T00:43:57+08:00] WARN: Original Run List: [role[bar], recipe[hello], role[foo]]
+[2019-08-25T00:43:57+08:00] WARN: Overridden Run List: [recipe[hello]]
+[2019-08-25T00:43:57+08:00] INFO: Run List is [recipe[hello]]
+[2019-08-25T00:43:57+08:00] INFO: Run List expands to [hello]
+[2019-08-25T00:43:57+08:00] INFO: Starting Chef Run for devhost
+[2019-08-25T00:43:57+08:00] INFO: Running start handlers
+[2019-08-25T00:43:57+08:00] INFO: Start handlers complete.
+[2019-08-25T00:43:57+08:00] DEBUG: POST /organizations/chef/reports/nodes/devhost/runs
+--- POST BODY ---
+{"action":"start","run_id":"5f71b411-a426-46c3-937d-f2b80ebc2e3d","start_time":"2019-08-25 00:43:57 +0800"}
+--- END POST BODY ---
+[2019-08-25T00:43:57+08:00] DEBUG: #<ChefZero::RestRequest:0x00007f9ffcd103f0
+ @body=
+  "{\"action\":\"start\",\"run_id\":\"5f71b411-a426-46c3-937d-f2b80ebc2e3d\",\"start_time\":\"2019-08-25 00:43:57 +0800\"}",
+ @env=
+  {"SCRIPT_NAME"=>"",
+   "SERVER_NAME"=>"localhost",
+   "REQUEST_METHOD"=>"POST",
+   "PATH_INFO"=>"/reports/nodes/devhost/runs",
+   "QUERY_STRING"=>nil,
+   "SERVER_PORT"=>1,
+   "HTTP_HOST"=>"localhost:1",
+   "HTTP_X_OPS_SERVER_API_VERSION"=>"1",
+   "rack.url_scheme"=>"chefzero",
+   "rack.input"=>#<StringIO:0x00007f9ffcd10378>},
+ @rest_base_prefix=["organizations", "chef"],
+ @rest_path=["organizations", "chef", "reports", "nodes", "devhost", "runs"]>
+
+[2019-08-25T00:43:57+08:00] DEBUG: 
+--- RESPONSE (404) ---
+{
+  "error": [
+    "Object not found: "
   ]
 }
+--- END RESPONSE ---
+resolving cookbooks for run list: ["hello"][0m
+[2019-08-25T00:43:57+08:00] DEBUG: POST /organizations/chef/environments/_default/cookbook_versions
+--- POST BODY ---
+{"run_list":["hello"]}
+--- END POST BODY ---
+[2019-08-25T00:43:57+08:00] DEBUG: #<ChefZero::RestRequest:0x00007f9ffcd17c18
+ @body="{\"run_list\":[\"hello\"]}",
+ @env=
+  {"SCRIPT_NAME"=>"",
+   "SERVER_NAME"=>"localhost",
+   "REQUEST_METHOD"=>"POST",
+   "PATH_INFO"=>"/environments/_default/cookbook_versions",
+   "QUERY_STRING"=>nil,
+   "SERVER_PORT"=>1,
+   "HTTP_HOST"=>"localhost:1",
+   "HTTP_X_OPS_SERVER_API_VERSION"=>"2",
+   "rack.url_scheme"=>"chefzero",
+   "rack.input"=>#<StringIO:0x00007f9ffcd17ce0>},
+ @rest_base_prefix=["organizations", "chef"],
+ @rest_path=
+  ["organizations", "chef", "environments", "_default", "cookbook_versions"]>
+
+[2019-08-25T00:43:57+08:00] DEBUG: 
+--- RESPONSE (200) ---
+{
+  "hello": {
+    "all_files": [
+      {
+        "name": "root_files/LICENSE",
+        "path": "LICENSE",
+        "checksum": "1d1c9ae2289377a52e9dcec0a6d255b6",
+        "specificity": "default",
+        "url": "chefzero://localhost:1/file_store/repo/cookbooks/hello/LICENSE"
+      },
+      {
+        "name": "root_files/.kitchen.yml",
+        "path": ".kitchen.yml",
+        "checksum": "631c4122566a13b55c06a42168a01671",
+        "specificity": "default",
+        "url": "chefzero://localhost:1/file_store/repo/cookbooks/hello/.kitchen.yml"
+      },
+      {
+        "name": "test/default_test.rb",
+        "path": "test/integration/default/default_test.rb",
+        "checksum": "ff51f2903209be000535600fde2d555c",
+        "specificity": "default",
+        "url": "chefzero://localhost:1/file_store/repo/cookbooks/hello/test/integration/default/default_test.rb"
+      },
+      {
+        "name": "root_files/CHANGELOG.md",
+        "path": "CHANGELOG.md",
+        "checksum": "bf96e8dcfd185005e9de4fec59b367f0",
+        "specificity": "default",
+        "url": "chefzero://localhost:1/file_store/repo/cookbooks/hello/CHANGELOG.md"
+      },
+      {
+        "name": "root_files/Berksfile",
+        "path": "Berksfile",
+        "checksum": "8c8bbef226c6ee425efaf94c201f4152",
+        "specificity": "default",
+        "url": "chefzero://localhost:1/file_store/repo/cookbooks/hello/Berksfile"
+      },
+      {
+        "name": "spec/spec_helper.rb",
+        "path": "spec/spec_helper.rb",
+        "checksum": "b8101caaeba977d51dc1fa5dd6282ded",
+        "specificity": "default",
+        "url": "chefzero://localhost:1/file_store/repo/cookbooks/hello/spec/spec_helper.rb"
+      },
+      {
+        "name": "spec/default_spec.rb",
+        "path": "spec/unit/recipes/default_spec.rb",
+        "checksum": "985a6e6a9c686898a00a73df26138ff4",
+        "specificity": "default",
+        "url": "chefzero://localhost:1/file_store/repo/cookbooks/hello/spec/unit/recipes/default_spec.rb"
+      },
+      {
+        "name": "root_files/README.md",
+        "path": "README.md",
+        "checksum": "7dc398ecbcddb3cb7afb6ccef3e02234",
+        "specificity": "default",
+        "url": "chefzero://localhost:1/file_store/repo/cookbooks/hello/README.md"
+      },
+      {
+        "name": "attributes/default.rb",
+        "path": "attributes/default.rb",
+        "checksum": "cab91db2eca2a1c28a6e78b710f5a555",
+        "specificity": "default",
+        "url": "chefzero://localhost:1/file_store/repo/cookbooks/hello/attributes/default.rb"
+      },
+      {
+        "name": "root_files/.gitignore",
+        "path": ".gitignore",
+        "checksum": "ddcd60b1350fde0d1fc8c5e9a5d491a5",
+        "specificity": "default",
+        "url": "chefzero://localhost:1/file_store/repo/cookbooks/hello/.gitignore"
+      },
+      {
+        "name": "recipes/default.rb",
+        "path": "recipes/default.rb",
+        "checksum": "696154f06c94648e201c94992ddb563f",
+        "specificity": "default",
+        "url": "chefzero://localhost:1/file_store/repo/cookbooks/hello/recipes/default.rb"
+      },
+      {
+        "name": "root_files/metadata.rb",
+        "path": "metadata.rb",
+        "checksum": "7bf06bb634ac3bb2b1b8d3af3a5cfae9",
+        "specificity": "default",
+        "url": "chefzero://localhost:1/file_store/repo/cookbooks/hello/metadata.rb"
+      },
+      {
+        "name": "root_files/chefignore",
+        "path": "chefignore",
+        "checksum": "8218f5e138ec098a9ec618082f05a9b8",
+        "specificity": "default",
+        "url": "chefzero://localhost:1/file_store/repo/cookbooks/hello/chefignore"
+      }
+    ],
+    "metadata": {
+      "name": "hello",
+      "description": "Installs/Configures hello",
+      "maintainer": "The Authors",
+      "maintainer_email": "you@example.com",
+      "license": "All Rights Reserved",
+      "platforms": {
+
+      },
+      "dependencies": {
+
+      },
+      "providing": {
+        "hello": ">= 0.0.0"
+      },
+      "recipes": {
+        "hello": ""
+      },
+      "version": "0.1.0",
+      "source_url": "",
+      "issues_url": "",
+      "privacy": false,
+      "chef_versions": [
+        [
+          ">= 13.0"
+        ]
+      ],
+      "ohai_versions": [
+
+      ],
+      "gems": [
+
+      ]
+    },
+    "version": "0.1.0",
+    "name": "hello-0.1.0",
+    "cookbook_name": "hello",
+    "frozen?": false,
+    "chef_type": "cookbook_version",
+    "json_class": "Chef::CookbookVersion"
+  }
+}
+--- END RESPONSE ---
+[2019-08-25T00:43:57+08:00] INFO: Loading cookbooks [hello@0.1.0]
+[2019-08-25T00:43:57+08:00] INFO: Skipping removal of obsoleted cookbooks from the cache
+Synchronizing Cookbooks:[0m
+[2019-08-25T00:43:57+08:00] DEBUG: GET /organizations/chef/file_store/repo/cookbooks/hello/attributes/default.rb
+[2019-08-25T00:43:57+08:00] DEBUG: #<ChefZero::RestRequest:0x00007f9ffc4026a0
+ @env=
+  {"SCRIPT_NAME"=>"",
+   "SERVER_NAME"=>"localhost",
+   "REQUEST_METHOD"=>"GET",
+   "PATH_INFO"=>"/file_store/repo/cookbooks/hello/attributes/default.rb",
+   "QUERY_STRING"=>nil,
+   "SERVER_PORT"=>1,
+   "HTTP_HOST"=>"localhost:1",
+   "HTTP_X_OPS_SERVER_API_VERSION"=>"1",
+   "rack.url_scheme"=>"chefzero",
+   "rack.input"=>#<StringIO:0x00007f9ffc4026f0>},
+ @rest_base_prefix=["organizations", "chef"],
+ @rest_path=
+  ["organizations",
+   "chef",
+   "file_store",
+   "repo",
+   "cookbooks",
+   "hello",
+   "attributes",
+   "default.rb"]>
+
+[2019-08-25T00:43:57+08:00] DEBUG: 
+--- RESPONSE (200) ---
+node.normal['message'] = "attribute from attribute file"
+--- END RESPONSE ---
+[2019-08-25T00:43:57+08:00] INFO: Storing updated cookbooks/hello/attributes/default.rb in the cache.
+  - hello (0.1.0)[0m
+Installing Cookbook Gems:[0m
+Compiling Cookbooks...[0m
+[2019-08-25T00:43:57+08:00] DEBUG: Cookbooks to compile: [:hello]
+[2019-08-25T00:43:57+08:00] DEBUG: Node devhost loading cookbook hello's attribute file /Users/tio/mydemo/chef-playground/.chef/local-mode-cache/cache/cookbooks/hello/attributes/default.rb
+[2019-08-25T00:43:57+08:00] DEBUG: GET /organizations/chef/required_recipe
+[2019-08-25T00:43:57+08:00] DEBUG: #<ChefZero::RestRequest:0x00007f9ffc3c3d88
+ @env=
+  {"SCRIPT_NAME"=>"",
+   "SERVER_NAME"=>"localhost",
+   "REQUEST_METHOD"=>"GET",
+   "PATH_INFO"=>"/required_recipe",
+   "QUERY_STRING"=>nil,
+   "SERVER_PORT"=>1,
+   "HTTP_HOST"=>"localhost:1",
+   "HTTP_X_OPS_SERVER_API_VERSION"=>"1",
+   "rack.url_scheme"=>"chefzero",
+   "rack.input"=>#<StringIO:0x00007f9ffc3c3dd8>},
+ @rest_base_prefix=["organizations", "chef"],
+ @rest_path=["organizations", "chef", "required_recipe"]>
+
+[2019-08-25T00:43:57+08:00] DEBUG: 
+--- RESPONSE (404) ---
+{
+  "error": [
+    "Object not found: "
+  ]
+}
+--- END RESPONSE ---
+Converging 1 resources[0m
+[2019-08-25T00:43:57+08:00] DEBUG: Converging node devhost
+Recipe: hello::default[0m
+  * file[/tmp/foo] action create[2019-08-25T00:43:57+08:00] INFO: Processing file[/tmp/foo] action create (hello::default line 7)
+[2019-08-25T00:43:57+08:00] INFO: file[/tmp/foo] created file /tmp/foo
+
+    [32m- create new file /tmp/foo[0m[2019-08-25T00:43:57+08:00] INFO: file[/tmp/foo] updated file contents /tmp/foo
+
+    [32m- update content in file /tmp/foo from none to 2f7d07[0m
+    [37m--- /tmp/foo	2019-08-25 00:43:57.631060046 +0800[0m
+    [37m+++ /tmp/.chef-foo20190825-97403-y7wxsa	2019-08-25 00:43:57.630436445 +0800[0m
+    [37m@@ -1 +1,2 @@[0m
+    [37m+hello - attribute from attribute file[0m
+[0m[2019-08-25T00:43:57+08:00] WARN: Skipping final node save because override_runlist was given
+[2019-08-25T00:43:57+08:00] INFO: Chef Run complete in 0.412248 seconds
+[2019-08-25T00:43:57+08:00] INFO: Skipping removal of unused files from the cache
+[0m
+Running handlers:[0m
+[2019-08-25T00:43:57+08:00] INFO: Running report handlers
+Running handlers complete
+[0m[2019-08-25T00:43:57+08:00] INFO: Report handlers complete
+Chef Client finished, 1/1 resources updated in 04 seconds[0m

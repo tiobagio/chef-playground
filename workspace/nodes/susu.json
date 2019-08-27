@@ -1,0 +1,21 @@
+{
+  "name": "susu",
+  "automatic": {
+    "ipaddress": "192.168.33.33",
+    "hostname": "susu",
+    "fqdn": "susu.playground.local",
+    "os": "linux",
+    "os_version": "2.6.32-431.el6.x86_64",
+    "platform": "centos",
+    "platform_version": "6.5",
+    "platform_family": "rhel",
+    "recipes": [
+      "apache",
+      "motd"
+    ]
+  },
+  "run_list": [
+    "recipe[apache]",
+    "recipe[motd]"
+  ]
+}

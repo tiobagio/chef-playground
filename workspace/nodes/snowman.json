@@ -1,0 +1,21 @@
+{
+  "name": "snowman",
+  "automatic": {
+    "ipaddress": "192.168.33.32",
+    "hostname": "snowman",
+    "fqdn": "snowman.playground.local",
+    "os": "linux",
+    "os_version": "3.13.0-24-generic",
+    "platform": "ubuntu",
+    "platform_version": "14.04",
+    "platform_family": "debian",
+    "recipes": [
+      "apache",
+      "motd",
+      "motd-attributes"
+    ]
+  },
+  "run_list": [
+    "role[webserver]"
+  ]
+}
